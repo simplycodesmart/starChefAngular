@@ -12,7 +12,7 @@ export class IngedientsComponent implements OnInit {
 
   public data: Dish;
 
-  constructor(private _router: Router, private _route: ActivatedRoute) { }
+  constructor(public _router: Router, private _route: ActivatedRoute) { }
 
 
   ngOnInit(): void {

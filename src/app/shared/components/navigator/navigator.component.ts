@@ -1,4 +1,5 @@
 import { Component, Input, ViewEncapsulation } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'star-chef-navigator',
@@ -9,4 +10,9 @@ import { Component, Input, ViewEncapsulation } from '@angular/core';
 export class NavigatorComponent {
   @Input() icon: string;
   @Input() title: string;
+  @Input() path: string;
+  constructor(public _router: Router) { }
+  public navigateBack() {
+    this._router.navigateByUrl(this.path);
+  }
 }
