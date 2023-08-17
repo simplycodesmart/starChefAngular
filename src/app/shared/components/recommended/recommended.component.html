@@ -1,0 +1,45 @@
+<section class="star-chef-recommended">
+  <div class="heading">
+    <mat-form-field>
+      <select matNativeControl>
+        <option selected *ngFor="let food of ['Recommended']" [value]="food">
+          {{food}}
+        </option>
+      </select>
+    </mat-form-field>
+    <button mat-raised-button>Menu</button>
+  </div>
+  <div class="detials">
+    <ng-container *ngFor="let item of items">
+      <mat-card>
+        <div class="item-details">
+          <h4>{{item.name}} <span><mat-icon [svgIcon]="item.type"></mat-icon></span><span>
+              <star-chef-rating [rating]="item.rating"></star-chef-rating></span>
+          </h4>
+          <div class="equipments-ingedients">
+            <div class="equipments">
+              <div class="equipments-item" *ngFor="let eqp of item.equipments">
+                <mat-icon [svgIcon]="eqp"></mat-icon>
+                <h4>{{eqp}}</h4>
+              </div>
+            </div>
+            <mat-divider [vertical]="true"></mat-divider>
+            <div class="ingedients">
+              <h4>Ingedients</h4>
+              <h5 class="view-list" (click)="navigateToIngedients(item.id)">View list
+                <mat-icon>keyboard_arrow_right</mat-icon>
+              </h5>
+            </div>
+          </div>
+          <div>
+            {{item.description}}
+          </div>
+        </div>
+        <div class="image-section">
+          <img [src]="item.image" [alt]="item.name">
+          <button mat-stroked-button> Add <mat-icon matSuffix>add_shopping_cart</mat-icon></button>
+        </div>
+      </mat-card>
+    </ng-container>
+  </div>
+</section>

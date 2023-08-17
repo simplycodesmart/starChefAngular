@@ -1,0 +1,15 @@
+<section class="star-chef-popular-dishes">
+  <div>
+    <h3>{{title}}</h3>
+    <div class="items">
+      <ng-container *ngFor="let item of items">
+        <div style="text-align: center;">
+          <div class="item">
+            <img [src]="item.image" alt="item.name">
+          </div>
+          <span class="popular-image-title">{{item.name}}</span>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>

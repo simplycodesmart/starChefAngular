@@ -1,0 +1,26 @@
+@import '_colors';
+
+.star-chef-recipe-style {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 60px;
+  gap: 1em;
+  overflow: auto;
+
+  .mdc-button {
+    border-radius: 40px;
+    min-width: 100px !important;
+  }
+
+  .selected {
+    border-color: $orange-color !important;
+    background: $orange-color-bg;
+    color: $orange-color !important;
+    font-weight: 700;
+  }
+}
+
+-webkit-scrollbar {
+  display: none;
+}

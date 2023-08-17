@@ -1,0 +1,80 @@
+<section class="star-chef-ingedients" *ngIf="data">
+  <star-chef-navigator [title]="' '" [icon]="'arrow_back_ios'"></star-chef-navigator>
+  <div class="details-section">
+    <div>
+      <div class="main-title">{{data.name}} <star-chef-rating [rating]="data.rating"></star-chef-rating></div>
+      <div class="desc">
+        <span>{{data.description}}</span>
+        <span
+          style="display: flex;align-items: center;gap:1em"><mat-icon>alarm</mat-icon>{{data.dishPreparation.timeToPrepare}}</span>
+      </div>
+      <div class="image-section">
+        <div class="circle"></div>
+        <div class="image-one"> <img src="assets/images/bg_img_1.png" alt=""> </div>
+        <!-- <div class="image-two"> <img src="assets/images/bg_img_2.png" alt=""> </div> -->
+      </div>
+    </div>
+  </div>
+  <mat-divider></mat-divider>
+  <div style="display: flex;justify-content: center; flex-direction: column; width: 100%;align-items: center; gap :3em">
+    <div class="sub-title">
+      Ingredients
+      <div class="small-font">for 2 People</div>
+    </div>
+
+    <mat-divider style="width: 90%; margin: auto;position: relative;"></mat-divider>
+  </div>
+  <div style="width: 100%;display: flex;justify-content: center;">
+    <mat-accordion multi>
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3> Vegetables ({{data.dishPreparation.ingredients.vegetables.length}}) </h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <table>
+          <thead></thead>
+          <tbody>
+            <tr *ngFor="let data of data.dishPreparation.ingredients.vegetables">
+              <td>{{data.name}}</td>
+              <td>{{data.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-expansion-panel>
+
+      <mat-expansion-panel [expanded]="true">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <h3>Spices ({{data.dishPreparation.ingredients.vegetables.length}}) </h3>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <table>
+          <thead></thead>
+          <tbody>
+            <tr *ngFor="let data of data.dishPreparation.ingredients.spices">
+              <td>{{data.name}}</td>
+              <td>{{data.quantity}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+  <div
+    style="width: 100%;display: flex;flex-direction: column;justify-content: center;align-items: center ;margin-top: 1em;gap:5em">
+    <div style="width: 90%;">
+      <h2>Appliances</h2>
+      <div style="display: flex;margin-top: 1em;">
+        <ng-container *ngFor="let data of data.dishPreparation.ingredients.appliances">
+          <div style="display: flex;flex-direction: column;align-items: center;justify-content: center;">
+            <mat-icon style="height: 200px;width: 200px;;" [svgIcon]="data.name"></mat-icon>
+            <span>
+              <h4>{{data.name}} </h4>
+            </span>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,32 @@
+@import '_colors';
+
+.rating {
+  font-size: 0.6em;
+  color: $white-color;
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  border-radius: 4px;
+  padding-left: 5px;
+  height: 20px;
+
+  .mat-icon {
+    width: 20px;
+    height: 20px;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+  }
+}
+
+.red {
+  background: red;
+}
+
+.green {
+  background: green;
+}
+
+.orange {
+  background: $orange-color;
+}

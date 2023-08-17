@@ -1,0 +1,130 @@
+@import '_colors';
+
+.star-chef-recommended {
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .mat-mdc-text-field-wrapper {
+      background: none;
+    }
+
+    .mat-mdc-input-element {
+      font-weight: 600 !important;
+      font-size: 19px !important;
+    }
+
+    .mat-mdc-form-field:hover {
+      opacity: 1;
+    }
+
+    .mdc-line-ripple {
+      display: none;
+    }
+
+    .mdc-button {
+      background: $black-color;
+      color: $white-color;
+    }
+  }
+
+  .detials {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    gap: 1em;
+    justify-content: center;
+
+    .mat-mdc-card {
+      width: 90%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 10px;
+
+      .item-details {
+        display: flex;
+        width: 80%;
+        flex-direction: column;
+        gap: 2em;
+
+        .equipments-ingedients {
+          display: flex;
+          flex-direction: row;
+          gap: 1em;
+
+          .mat-divider {
+            width: 5px;
+            margin-top: 0 !important
+          }
+
+          .ingedients {
+            display: flex;
+            flex-direction: column;
+
+            .view-list {
+              color: $orange-color;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+
+            }
+          }
+
+
+        }
+
+        @media screen and (max-width : 570px) {
+          .equipments-ingedients {
+            flex-direction: column;
+          }
+        }
+
+        .equipments {
+          display: flex;
+          flex-direction: row;
+          gap: 1em;
+
+          .equipments-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            h4 {
+              font-size: 1rem;
+              font-weight: 400;
+            }
+          }
+        }
+
+        h4 {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+          font-size: 1.2rem;
+          font-weight: 500;
+        }
+      }
+
+      .image-section {
+        min-width: 12vw;
+        min-height: 12vh;
+        border-radius: 11px;
+        position: relative;
+
+        button {
+          position: absolute;
+          border-color: $orange-color !important;
+          background: $orange-color-bg;
+          color: $orange-color !important;
+          font-weight: 700;
+          top: 84%;
+          right: 28%;
+        }
+      }
+    }
+  }
+}

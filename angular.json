@@ -12,7 +12,7 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "app",
+      "prefix": "star-chef",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
@@ -29,6 +29,11 @@
               "src/favicon.ico",
               "src/assets"
             ],
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src/assets"
+              ]
+            },
             "styles": [
               "src/styles.scss"
             ],
@@ -90,7 +95,9 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              "src/assets/icons",
+              "src/assets/images"
             ],
             "styles": [
               "src/styles.scss"
@@ -100,5 +107,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "19c6bc28-70cf-44e7-a69c-eb97d32528a2"
   }
 }

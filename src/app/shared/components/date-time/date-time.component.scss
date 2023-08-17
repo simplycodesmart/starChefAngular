@@ -1,0 +1,77 @@
+@import '_colors';
+
+.star-chef-date-time {
+  width: 100%;
+  position: relative;
+  height: 130px;
+
+  .black-banner {
+    position: relative;
+    width: 100%;
+    background-color: $black-color;
+    height: 80px;
+    margin-top: 1em;
+
+    .date-time-card {
+      position: absolute;
+      top: 40%;
+      left: 10%;
+      width: 80%;
+      height: 100px;
+
+      .mat-mdc-card {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: row;
+        gap: 1em;
+
+        .mdc-text-field--disabled.mdc-text-field--filled {
+          background: transparent;
+        }
+
+        .mdc-line-ripple,
+        .mat-mdc-form-field-subscript-wrapper {
+          display: none;
+        }
+
+        .mat-divider {
+          width: 5px;
+          height: 80%;
+          margin-top: 0 !important
+        }
+
+        .calendar,
+        .time {
+          display: flex;
+          align-items: center;
+          gap: 1em;
+        }
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .date-time-card {
+        .mat-mdc-card {
+          display: flex;
+          flex-direction: column !important;
+          align-items: flex-start;
+          padding: 10px;
+
+          .mat-divider.mat-divider-vertical {
+            border-top-width: 1px;
+            border-top-style: solid;
+            border-top-color: rgba(0, 0, 0, 0.12);
+            width: 100%;
+          }
+
+          .calendar,
+          .time {
+            margin-left: 27%;
+          }
+        }
+      }
+    }
+  }
+}

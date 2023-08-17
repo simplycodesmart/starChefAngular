@@ -1,0 +1,6 @@
+<div class="star-chef-recipe-style">
+  <ng-container *ngFor="let item of items;let i= index">
+    <button mat-stroked-button (click)="selectedIndex = i"
+      [ngClass]="{'selected' : selectedIndex === i}">{{item}}</button>
+  </ng-container>
+</div>

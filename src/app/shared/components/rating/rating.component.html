@@ -1,0 +1,3 @@
+<div class="rating" [ngClass]="{'red' : rating <= 1 ,'orange' :rating <= 3 && rating > 1 , 'green' : rating >3 }">
+  {{rating}} <mat-icon matSuffix>star_border</mat-icon>
+</div>
